@@ -5,7 +5,7 @@ class Robot:
 		self.dirr  = dirr					#direction du robot (1 pour haut, 2 pour droite, 3 pour bas, 4 pour gauche)
 	
 	def getPos(self):						#retourne la position
-		return self.posx, self.posy
+		return (self.posx, self.posy)
 		
 	def getDirr(self):						#retourne la direction
 		return self.dirr
@@ -51,9 +51,20 @@ class Robot:
             		print("Mauvais argument, le robot n'a pas tourne. Les parametres possibles sont: 'd' ou 'g'")
 			
 	
-	def collision(self, tabPoints):					#verifie si le robot fait une collision avec un objet grace à un tableau de points
+	def detecter(self, tabPoints):					#verifie si le robot detecte un objet devant lui. tabPoints est un tableau de tuple
 	                                                        	#regarde si position du robot est dans le tableau de points
-		pass
+		for p in tabPoints: 
+			if (p == self.getPos):
+				print("Robot est sur un obstacle. Suite des operations impossible")
+				return False
+		
+
+		#idee pour suite de cette methode a terminer: -regarder direction du robot
+		#                                             -regarder la valeur de la position si le robot avancait de 1 (mais ne pas le faire avancer)
+		#                                             -parcourrir la boucle a nouveau avec cette nouvelle valeur de position
+		#                                             -si valeur est dans la boucle alors return False, sinon return True
+
+		return True
 
 
 
