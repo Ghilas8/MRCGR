@@ -31,7 +31,29 @@ class Robot:
 		elif(self.dirr==2):
 			self.posx -=1
 
+		elif(self.dirr==3def detecter(self, tabPoints):					#verifie si le robot detecte un objet devant lui. tabPoints est un tableau de tuple
+	                                                        	#regarde si position du robot est dans le tableau de points
+		for p in tabPoints: 
+			if (p == self.getPos()):
+				print("Robot est sur un obstacle. Suite des operations impossible")
+				return True
+			
+			
+		if(self.dirr==1):										#regarder direction du robot et prend la valeur de la position apres un avancement (l'avancement n'est pas realise)
+			testPos = (self.posx, self.posy+1)
+		elif(self.dirr==2):
+			testPos = (self.posx+1, self.posy)
 		elif(self.dirr==3):
+			testPos = (self.posx, self.posy -1)
+		else:
+			testPos = (self.posx-1, self.posy)
+		
+		for p in tabPoints:										#regarde si la position est dans le tableau de points
+			if (p == testPos):
+				print("Obstacle devant le robot.")
+				return True
+		print("pas d'obstacle devant")
+		return False):
 			self.posy +=1
 
 		else:
@@ -54,17 +76,26 @@ class Robot:
 	def detecter(self, tabPoints):					#verifie si le robot detecte un objet devant lui. tabPoints est un tableau de tuple
 	                                                        	#regarde si position du robot est dans le tableau de points
 		for p in tabPoints: 
-			if (p == self.getPos):
-				print("Robot est sur un obstacle. Suite des operations impossible")
-				return False
+			if (p == self.getPos()):
+				print("Robot est sur un obstacle.")
+				return True
+			
+			
+		if(self.dirr==1):						#regarder direction du robot et prend la valeur de la position apres un avancement (l'avancement n'est pas realise)
+			testPos = (self.posx, self.posy+1)
+		elif(self.dirr==2):
+			testPos = (self.posx+1, self.posy)
+		elif(self.dirr==3):
+			testPos = (self.posx, self.posy -1)
+		else:
+			testPos = (self.posx-1, self.posy)
 		
-
-		#idee pour suite de cette methode a terminer: -regarder direction du robot
-		#                                             -regarder la valeur de la position si le robot avancait de 1 (mais ne pas le faire avancer)
-		#                                             -parcourrir la boucle a nouveau avec cette nouvelle valeur de position
-		#                                             -si valeur est dans la boucle alors return False, sinon return True
-
-		return True
+		for p in tabPoints:						#regarde si la position est dans le tableau de points
+			if (p == testPos):
+				print("Obstacle devant le robot.")
+				return True
+		print("pas d'obstacle devant")
+		return False
 
 
 
