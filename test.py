@@ -32,3 +32,16 @@ print("position avant" ,robot1.getPos())
 for i in range(0,10):
     robot1.reculer()
     print("position apres" ,i,robot1.getPos())
+ 
+
+#DETECTER
+print("\nDebut test detecter")
+print("premier test:")
+print("position robot1:" ,robot1.getPos())
+robot1.detecter([(0,0),(-10,10)])
+print("\ndeuxieme test:")
+for i in range(5):
+    if (not robot1.detecter([(-5,10)])):
+        robot1.avancer()
+        print(robot1.getPos())
+print("position du robot: ",robot1.getPos())
