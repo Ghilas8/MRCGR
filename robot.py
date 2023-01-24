@@ -31,29 +31,7 @@ class Robot:
 		elif(self.dirr==2):
 			self.posx -=1
 
-		elif(self.dirr==3def detecter(self, tabPoints):					#verifie si le robot detecte un objet devant lui. tabPoints est un tableau de tuple
-	                                                        	#regarde si position du robot est dans le tableau de points
-		for p in tabPoints: 
-			if (p == self.getPos()):
-				print("Robot est sur un obstacle. Suite des operations impossible")
-				return True
-			
-			
-		if(self.dirr==1):										#regarder direction du robot et prend la valeur de la position apres un avancement (l'avancement n'est pas realise)
-			testPos = (self.posx, self.posy+1)
-		elif(self.dirr==2):
-			testPos = (self.posx+1, self.posy)
 		elif(self.dirr==3):
-			testPos = (self.posx, self.posy -1)
-		else:
-			testPos = (self.posx-1, self.posy)
-		
-		for p in tabPoints:										#regarde si la position est dans le tableau de points
-			if (p == testPos):
-				print("Obstacle devant le robot.")
-				return True
-		print("pas d'obstacle devant")
-		return False):
 			self.posy +=1
 
 		else:
