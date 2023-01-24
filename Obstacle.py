@@ -1,5 +1,5 @@
 class Obstacle:
-    def init(self,posx, posy, tailleX, tailleY):
+    def __init__(self,posx, posy, tailleX, tailleY):
         self.posx     = posx                    #position du point le plus en bas a gauche du rectangle en abscisse 
         self.posy     = posy                    #position du point le plus en bas a gauche du rectangle en ordonne
         self.tailleX = tailleX                    #taille du rectangle en abscisse
