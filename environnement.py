@@ -23,14 +23,9 @@ class Environnement:
         
     def update(self,robot):
         rx , ry = robot.getPos()
-        #ox , oy = obstacle.getPos()       #obstacle en commentaire et pas dans les arguments tant que la classe n'a pas été créé
         if((rx < 0) or (rx > self.max_x) or (ry < 0) or (ry > self.max_y)):
             print("Erreur : Le robot se trouve en dehors du monde")
             return
-        #if((ox < 0) or (ox > self.max_x) or (oy < 0) or (oy > self.max_y)):
-            #print("Erreur : L'obstacle se trouve en dehors du monde")
-            #return
-        
         print("Le robot se trouve désormais en ",robot.getPos()," et est dirigé vers ",robot.getDirr())
-        #print("L'obstacle se trouve désormais en (",obstacle.getPos(),)
+        
         
